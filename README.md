@@ -1,0 +1,1 @@
+This README provides an overview of how to set up user authentication using Django's built-in authentication system. User authentication is crucial for securing your web application and allowing users to register, log in, and manage their accounts

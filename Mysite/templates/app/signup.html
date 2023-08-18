@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block header %}Register {% endblock %}
+    {% for message in messages %}
+    <div class="alert alert.{{ message }} alert-dismissible fade show" role="alert">
+        <strong>Mesaage:</strong> {{ message }}
+        <button>
+
+        </button type="button" class="close" data-dismiss="alert" aria-lable="Close">
+            <span aria-hidden="true">&time; </span>
+        </button>    
+    </div>
+    {% endfor %}
+{% block content %}
+    <h4> register <h4>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Enter Your Personal Information </legend></br>
+            <lablel for='username'>Username / Phone: </label>
+                <input type='text' name='username' placeholder='Username / Phone' required ></br></br>
+            <lable for='firstname'>First Name: </lable>
+                <input type='text' name='firstname' placeholder='Firstname' required ></br></br>
+            <lable for='lastname'>Last Name</lable>
+                <input type='text' name='lastname' placeholder='Lastname' required></br></br>
+            <lable for='email'>Email </lable>
+                <input type='email' name='email' placeholder='Email' required></br></br>
+            <lable for='password'>Password </lable>
+                <input type='password' name='password1' placeholder='Pasword' required ></br></br>
+            <lable for='password'>Confirm Pasword</lable>
+                <input type='password' name='password2' placeholder='Confirm password' required></br><br>
+            <input type='submit' value= 'Create Acoount'>
+
+        </feildset>
+    </form>
+{% endblock %}
